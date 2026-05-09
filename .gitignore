@@ -1,0 +1,19 @@
+.DS_Store
+__pycache__/
+*.pyc
+.env
+
+# Runtime data — never tracked, synced via BOS
+daily_pipeline/
+content_log.md
+data/content_log.md
+data/stats/
+
+# Runtime artifacts
+*.png
+*.jpg
+!materials/*.png
+!materials/*.jpg
+
+# Local-only docs (not upstreamed)
+dailyreport/
