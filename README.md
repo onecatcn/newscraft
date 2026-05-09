@@ -36,6 +36,17 @@ python3 scripts/multisource_fetch.py --limit 30 > raw_topics.json
 python3 scripts/topic_parse.py --input raw_topics.json --output topics.json
 ```
 
+> **关于国内热榜**
+>
+> `multisource_fetch.py` 抓取国内热榜（IT之家、36氪、虎嗅等）时，依赖一个名为
+> `daily-hot-news` 的本地 skill（路径 `~/.claude/skills/daily-hot-news/`）。
+> 该 skill 基于开源项目 [imsyy/DailyHotApi](https://github.com/imsyy/DailyHotApi) 实现。
+>
+> **外部开发者使用方式：**
+> 1. 自行部署 [DailyHotApi](https://github.com/imsyy/DailyHotApi)（Docker 一键部署）
+> 2. 按其接口格式编写 `~/.claude/skills/daily-hot-news/fetcher.py`，实现 `is_available()` 和 `fetch_hot_news()` 方法
+> 3. 或直接跳过：`multisource_fetch.py` 检测到 skill 不存在时会自动跳过国内热榜，仅使用境外信源（HN / Reddit / arXiv / RSS 等）
+
 ### 文章生成
 
 ```bash
