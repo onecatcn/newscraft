@@ -117,4 +117,4 @@ multisource_fetch → topic_parse → daily_digest
 
 ## License
 
-MIT
+Apache-2.0
