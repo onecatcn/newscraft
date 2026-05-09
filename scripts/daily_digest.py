@@ -2,7 +2,7 @@
 """daily_digest.py — 每日AI速递提示词生成器
 
 将 01_topics.json 中的 8-10 条 AI 热点分类整理，生成 03_digest_prompt.md
-供 Claude 执行写作。Python 准备数据，Claude 执行写作——与现有架构一致。
+供 ERNIE 执行写作。Python 准备数据，ERNIE 执行写作——与现有架构一致。
 
 用法:
     python3 daily_digest.py \

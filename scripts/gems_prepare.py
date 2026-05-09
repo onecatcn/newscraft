@@ -182,7 +182,7 @@ def prepare_gems(draft_path: str, output_dir: str):
     inline_prompts = generate_inline_prompts(title, sections, draft)
     inline_path = Path(output_dir) / "inline_prompts.txt"
     with open(inline_path, "w", encoding="utf-8") as f:
-        f.write("# 正文配图提示词 (Gemini Visual Gems)\n\n")
+        f.write("# 正文配图提示词 (ernie-image-turbo)\n\n")
         f.write(f"## 文章: {title}\n\n")
 
         if inline_prompts:
@@ -203,14 +203,14 @@ def prepare_gems(draft_path: str, output_dir: str):
         print(f"  {i+1}. inline_{i}.png — {p['section']} (可选)", file=sys.stderr)
 
     print(
-        "\n💡 使用方法: 将上述 prompt 复制到 Gemini Visual Gems，"
+        "\n💡 使用方法: 将上述 prompt 传入 gems_generate.py，"
         "生成后保存到 05_images/ 目录。",
         file=sys.stderr,
     )
 
 
 def main():
-    parser = argparse.ArgumentParser(description="生成 Gemini Visual Gems 配图提示词")
+    parser = argparse.ArgumentParser(description="生成 ernie-image-turbo 配图提示词")
     parser.add_argument("--draft", required=True, help="初稿 Markdown 文件路径")
     parser.add_argument("--output-dir", required=True, help="输出目录路径")
     args = parser.parse_args()
